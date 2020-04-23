@@ -12,7 +12,6 @@ import {
 import { connect } from "react-redux";
 import { addItem } from '../actions/itemActions';
 import FormGroup from 'reactstrap/lib/FormGroup';
-import { v4 as uuidv4 } from "uuid";
 
 class ItemModal extends Component {
   state = {
@@ -34,7 +33,6 @@ class ItemModal extends Component {
     e.preventDefault();
 
     const newItem = {
-      id: uuidv4(),
       name: this.state.name
     }
 
