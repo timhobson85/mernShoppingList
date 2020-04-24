@@ -1,6 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// const bodyParser = require('body-parser'); // not needed anymore?
 const path = require('path');
 
 const app = express();
@@ -16,6 +15,7 @@ mongoose
   .connect(db, 
   {
     useNewUrlParser: true,
+    useCreateIndex: true,
     useUnifiedTopology: true,
   })
   .then(() => console.log('MongoDB Connected...'))
@@ -23,7 +23,7 @@ mongoose
 
 // Use Routes
 app.use('/api/items', require('./routes/api/items'));
-// app.use('/api/users', require('./routes/api/users'));
+app.use('/api/users', require('./routes/api/users'));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
