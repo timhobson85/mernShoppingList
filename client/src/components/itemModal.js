@@ -5,13 +5,13 @@ import {
   ModalHeader,
   ModalBody,
   Form,
-  FOrmGroup,
+  FormGroup,
   Label,
   Input
 } from "reactstrap";
 import { connect } from "react-redux";
 import { addItem } from '../actions/itemActions';
-import FormGroup from 'reactstrap/lib/FormGroup';
+// import FormGroup from 'reactstrap/lib/FormGroup';
 
 class ItemModal extends Component {
   state = {
